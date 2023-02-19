@@ -63,7 +63,6 @@ class MyApp extends StatelessWidget {
           title: Text('Column'),
         ),
         body: Stack(
-          
           children: [
             Container(
               height: 400,
