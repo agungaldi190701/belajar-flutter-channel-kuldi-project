@@ -62,25 +62,27 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Column'),
         ),
-        body: Column(
+        body: Row(
           crossAxisAlignment: CrossAxisAlignment
-              .center, // merubah posisi kanan tengah kiri semua kolom
+              .end, // merubah posisi kanan tengah kiri semua kolom
           mainAxisAlignment: MainAxisAlignment
               .center, // merubah posisi atas tengah bawah semua kolom
+          verticalDirection:
+              VerticalDirection.down, // merubah posisi atas  bawah Setiap kolom
           children: [
             Container(
-              width: 100,
-              height: 50,
+              width: 50,
+              height: 100,
               color: Colors.green,
             ),
             Container(
-              width: 200,
-              height: 50,
+              width: 50,
+              height: 200,
               color: Colors.yellow,
             ),
             Container(
-              width: 300,
-              height: 50,
+              width: 50,
+              height: 300,
               color: Colors.red,
             ),
           ],
