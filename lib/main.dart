@@ -5,6 +5,12 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  List<Color> myColor = [
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.yellow,
+  ];
   List<Widget> myList = [
     Container(
       height: 400,
@@ -36,9 +42,15 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("List View"),
         ),
-        body: ListView(
-          // menjadi scrolabel
-          children: myList,
+        body: ListView.builder(
+          itemCount: myColor.length,
+          itemBuilder: (context, index) {
+            return Container(
+              height: 400,
+              width: 400,
+              color: myColor[index],
+            );
+          },
         ),
       ),
     );
