@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         //untuk bagian atas (header)
         appBar: AppBar(
+          backgroundColor: Colors.black,
           title: const Text("My Apps"),
         ),
 
