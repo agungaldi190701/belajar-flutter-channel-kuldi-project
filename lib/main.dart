@@ -42,7 +42,12 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("List View"),
         ),
-        body: ListView.builder(
+        body: ListView.separated(
+          separatorBuilder: (context, index) {
+            return Container(
+              height: 10,
+            );
+          },
           itemCount: myColor.length,
           itemBuilder: (context, index) {
             return Container(
