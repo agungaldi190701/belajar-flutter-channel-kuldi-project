@@ -5,13 +5,13 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  List<Color> myColor = [
+  final List<Color> myColor = [
     Colors.red,
     Colors.blue,
     Colors.green,
     Colors.yellow,
   ];
-  List<Widget> myList = [
+  final List<Widget> myList = [
     Container(
       height: 400,
       width: 400,
@@ -33,7 +33,13 @@ class MyApp extends StatelessWidget {
       color: Colors.yellow,
     ),
   ];
-
+  final List<Widget> myListText = List.generate(
+    100,
+    (index) => Text(
+      "${index + 1}",
+      style: TextStyle(fontSize: 20 + double.parse(index.toString())),
+    ),
+  );
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -42,20 +48,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("List View"),
         ),
-        body: ListView.separated(
-          separatorBuilder: (context, index) {
-            return Divider(
-              color: Colors.black,
-            );
-          },
-          itemCount: myColor.length,
-          itemBuilder: (context, index) {
-            return Container(
-              height: 400,
-              width: 400,
-              color: myColor[index],
-            );
-          },
+        body: ListView(
+          children: myListText,
         ),
       ),
     );
