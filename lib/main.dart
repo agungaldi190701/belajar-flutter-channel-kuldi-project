@@ -5,53 +5,50 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  final List<Color> myColor = [
-    Colors.red,
-    Colors.blue,
-    Colors.green,
-    Colors.yellow,
-  ];
-  final List<Widget> myList = [
-    Container(
-      height: 400,
-      width: 400,
-      color: Colors.red,
-    ),
-    Container(
-      height: 400,
-      width: 400,
-      color: Colors.blue,
-    ),
-    Container(
-      height: 400,
-      width: 400,
-      color: Colors.green,
-    ),
-    Container(
-      height: 400,
-      width: 400,
-      color: Colors.yellow,
-    ),
-  ];
-  final List<Widget> myListText = List.generate(
-    100,
-    (index) => Text(
-      "${index + 1}",
-      style: TextStyle(fontSize: 20 + double.parse(index.toString())),
-    ),
-  );
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("List View"),
-        ),
-        body: ListView(
-          children: myListText,
-        ),
-      ),
+          appBar: AppBar(
+            title: Text("List Tile"),
+          ),
+          body: ListView(children: [
+            ListTile(
+              contentPadding: EdgeInsets.all(10),
+              leading: CircleAvatar(),
+              title: Text("Agung Aldi"),
+              subtitle: Text(
+                "This is subtitle textakdlnaskljdnaslkdnasldnaskldnaslkdnaklsndklasndklasasndakslndasdnasldnaksldasdasdasdasdasasdasdas",
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+              trailing: Text("10:50 PM"),
+              // tileColor: Colors.amber,
+
+              onTap: () {
+                return;
+              },
+            ),
+            Divider(
+              color: Colors.black,
+            ),
+            ListTile(
+              contentPadding: EdgeInsets.all(10),
+              leading: CircleAvatar(),
+              title: Text("Agung Aldi"),
+              subtitle: Text("This is subtitle text..."),
+              trailing: Text("10:50 PM"),
+              onTap: () {
+                return;
+              },
+            ),
+            Divider(
+              color: Colors.black,
+            ),
+          ])),
     );
   }
 }
